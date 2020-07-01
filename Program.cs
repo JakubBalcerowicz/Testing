@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(int[] arr)
         {
-            int[] arr = new int[] { -1, 3, -4, 5, 1, -6, 2, 1 };
+
             int n = arr.Length;
             if (n == 0)
             {
@@ -27,9 +27,12 @@ namespace ConsoleApp1
                 {
                     sumLeft += arr[k];
                 }
-                for (int k = i + 1; k < n; k++)
+                if (n > 1)
                 {
-                    sumRight += arr[k];
+                    for (int k = i + 1; k < n; k++)
+                    {
+                        sumRight += arr[k];
+                    }
                 }
                 if (i == 0 && sumRight == 0)
                     return i;
